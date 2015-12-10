@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Rock Paper Scissors</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<script type="text/javascript" src="ais.js"></script>
+<script type="text/javascript" src="drag_and_drop.js"></script>
+<script type="text/javascript" src="anim.js"></script>
+<script type="text/javascript" src="stats.js"></script>
+<script type="text/javascript" src="rps.js"></script>
+
+<body>
+  <div class="title">Rock Paper Scissors</div>
+
+  <div id="ai-wrapper">
+    <text id="ai-label">AI Options:</text>
+    <select id="picklist" class="ai-picklist">
+      <option value="random">Random</option>
+      <option value="cheating">Always Win</option>
+      <option value="always-win">Always Lose</option>
+      <option value="pacifist">Always Tie</option>
+    </select>
+  </div>
+
+  <div class="choices" ondrop="dropInShelf(event)" ondragover="allowDrop(event)">
+    <img class ="inputs" id="user-rock" draggable="true" ondragstart="drag(event)" src="./img/rock.png">
+    <img class ="inputs" id="user-paper" draggable="true" ondragstart="drag(event)" src="./img/paper.png">
+    <img class ="inputs" id="user-scissors" draggable="true" ondragstart="drag(event)" src="./img/scissors.png">
+  </div>
+
+  <div id="arena" ondrop="dropInArena(event)" ondragover="allowDrop(event)"></div>
+
+  <img id="vs" src="./img/vs.png">
+
+  <div id="result"></div>
+
+  <img class ="ai-inputs" id="ai-rock" src="./img/rock.png">
+  <img class ="ai-inputs" id="ai-paper" src="./img/paper.png">
+  <img class ="ai-inputs" id="ai-scissors" src="./img/scissors.png">
+
+  <div id="stats">
+    <text id="stats-label">Stats</text>
+    <text id="num-played"></text>
+    <text id="stats-line"></text>
+    <text id="last-played"></text>
+  </div>
+
+</body>
